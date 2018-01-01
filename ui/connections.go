@@ -11,7 +11,7 @@ import (
 func RenderConnectionsView(g *gocui.Gui, connections []*pgpass.Connection) error {
 	maxX, maxY := g.Size()
 
-	v, err := g.SetView("connections", -1, 2, maxX, maxY-1)
+	v, err := g.SetView("connections", -1, 2, maxX, maxY-2)
 
 	v.Clear()
 
