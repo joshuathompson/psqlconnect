@@ -112,8 +112,11 @@ func keybindings(g *gocui.Gui) error {
 	})
 
 	err = g.SetKeybinding("connections", gocui.KeyEnter, gocui.ModNone, func(g *gocui.Gui, v *gocui.View) error {
-		connectOnExit = true
-		return gocui.ErrQuit
+		if len(filteredConnections) > 0 {
+			connectOnExit = true
+			return gocui.ErrQuit
+		}
+		return nil
 	})
 
 	err = g.SetKeybinding("connections", 'r', gocui.ModNone, func(g *gocui.Gui, v *gocui.View) error {
