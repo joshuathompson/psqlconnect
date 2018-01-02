@@ -17,7 +17,7 @@ Connections are handled by a ~/.pgpass file as described by the [Postgres docs](
 hostname:port:database:username:password
 ```
 
-The commented line with `NAME=` is optional but will give you an extra descriptor about the database in psqlconnect.  An example pgpass file is included.
+The commented line with `NAME=` is optional but will give you an extra descriptor about the database in psqlconnect.  An example pgpass file is included.  Make sure that your ~/.pgpass has permissions of 0600.
 
 ### Keybinds
 
