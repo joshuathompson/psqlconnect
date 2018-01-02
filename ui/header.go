@@ -3,11 +3,11 @@ package ui
 import (
 	"fmt"
 
-	"github.com/joshuathompson/pgm/utils"
+	"github.com/joshuathompson/psqlconnect/utils"
 	"github.com/jroimartin/gocui"
 )
 
-func RenderHeaderView(g *gocui.Gui) error {
+func RenderHeaderView(g *gocui.Gui, numberOfConnections int, filter string) error {
 	maxX, _ := g.Size()
 
 	v, err := g.SetView("header", -1, -1, maxX, 2)
@@ -23,9 +23,16 @@ func RenderHeaderView(g *gocui.Gui) error {
 	}
 
 	// TOP ROW
-	title := utils.RightPaddedString("Postgres/Redshift Connections", maxX, 2)
+	title := utils.RightPaddedString("Connections", (maxX / 2), 2)
 
-	fmt.Fprintf(v, "\u001b[1m%s\u001b[0m\n", title)
+	var infoSection string
+	if len(filter) > 0 {
+		infoSection = utils.LeftPaddedString(fmt.Sprintf("Total: %d  |  Active filter: %s", numberOfConnections, filter), (maxX / 2), 2)
+	} else {
+		infoSection = utils.LeftPaddedString(fmt.Sprintf("Total: %d", numberOfConnections), (maxX / 2), 2)
+	}
+
+	fmt.Fprintf(v, "%s %s\n", title, infoSection)
 
 	//BOTTOM ROW
 	nameHeader := utils.RightPaddedString("NAME", maxX/6, 2)
@@ -34,7 +41,7 @@ func RenderHeaderView(g *gocui.Gui) error {
 	dbHeader := utils.RightPaddedString("DATABASE", maxX/5, 2)
 	usernameHeader := utils.RightPaddedString("USERNAME", maxX/5, 2)
 
-	fmt.Fprintf(v, "\u001b[1m%s %s %s %s %s\u001b[0m", nameHeader, hostHeader, portHeader, dbHeader, usernameHeader)
+	fmt.Fprintf(v, "%s %s %s %s %s", nameHeader, hostHeader, portHeader, dbHeader, usernameHeader)
 
 	return nil
 }

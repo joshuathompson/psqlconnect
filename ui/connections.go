@@ -3,8 +3,8 @@ package ui
 import (
 	"fmt"
 
-	"github.com/joshuathompson/pgm/pgpass"
-	"github.com/joshuathompson/pgm/utils"
+	"github.com/joshuathompson/psqlconnect/pgpass"
+	"github.com/joshuathompson/psqlconnect/utils"
 	"github.com/jroimartin/gocui"
 )
 
