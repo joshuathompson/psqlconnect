@@ -4,7 +4,7 @@
 [![asciicast](https://asciinema.org/a/UDHxTcmiRSmOozpAsoL5jimIn.png)](https://asciinema.org/a/UDHxTcmiRSmOozpAsoL5jimIn)
 
 ## Install
-Fetch the latest release for your platform here [from the following page](https://github.com/joshuathompson/psqlconnect/releases).
+Fetch the latest release for your platform [from the following page](https://github.com/joshuathompson/psqlconnect/releases).
 
 ## Why would I want to use this?
 I built this for myself after getting tired of copy pasting information from 1Password / looking through terminal history in order to connect to client Redshift/Postgres databases.  The [~/.pgpass file](https://www.postgresql.org/docs/9.3/static/libpq-pgpass.html) simplifies the situation but it still takes time to open that file, find the connection that I wanted, and write a psql command to connect.  This tool simplifies all that to selecting a connection from a table.
