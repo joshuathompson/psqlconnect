@@ -74,28 +74,6 @@ func LoadConnectionsFromPgpass() (connections []*Connection, err error) {
 	return connections, err
 }
 
-func SaveConnectionsToPgPass(connections []*Connection) error {
-	usr, err := user.Current()
-
-	if err != nil {
-		return err
-	}
-
-	file, err := os.OpenFile(usr.HomeDir+"/.pgpass", os.O_RDWR|os.O_TRUNC, 0600)
-
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	for _, c := range connections {
-		fmt.Fprintf(file, "# NAME=%s\n", c.Name)
-		fmt.Fprintf(file, "%s:%s:%s:%s:%s\n", c.Host, c.Port, c.Database, c.Username, c.Password)
-	}
-
-	return nil
-}
-
 func GetFilteredConnections(connections []*Connection, filter string) (filteredConnections []*Connection) {
 	filterLower := strings.ToLower(filter)
 
