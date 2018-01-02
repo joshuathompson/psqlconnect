@@ -7,7 +7,7 @@
 Fetch the latest release for your platform [from the following page](https://github.com/joshuathompson/psqlconnect/releases).
 
 ## Why would I want to use this?
-I built this for myself after getting tired of copy pasting information from 1Password / looking through terminal history in order to connect to client Redshift/Postgres databases.  The [~/.pgpass file](https://www.postgresql.org/docs/9.3/static/libpq-pgpass.html) simplifies the situation but it still takes time to open that file, find the connection that I wanted, and write a psql command to connect.  This tool simplifies all that to selecting a connection from a table.
+I built this for myself after getting tired of copy pasting information from 1Password / looking through terminal history in order to connect to client Redshift/Postgres databases.  The [~/.pgpass file](https://www.postgresql.org/docs/9.3/static/libpq-pgpass.html) simplifies the situation but it still takes time to open that file, find the connection that I wanted, and write a psql command to connect.  This tool simplifies all that to selecting a connection from a table.  I realize that I could use a tool like Postico or Workbench but I really like using `psql`!
 
 ## How do I add connections?
 Connections are handled by a ~/.pgpass file as described by the [Postgres docs](https://www.postgresql.org/docs/9.3/static/libpq-pgpass.html).  Each entry should be in the following format:
