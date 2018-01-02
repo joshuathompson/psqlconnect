@@ -19,7 +19,7 @@ hostname:port:database:username:password
 
 The commented line with `NAME=` is optional but will give you an extra descriptor about the database in psqlconnect.  An example pgpass file is included.
 
-### TUI Keybinds
+### Keybinds
 
 Keybind              | Description
 ---------------------|---------------------------------------
