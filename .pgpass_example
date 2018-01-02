@@ -1,0 +1,5 @@
+# Connections are in form hostname:port:database:username:password
+# NAME=local
+/var/run/postgresql:5432:postgres:test:password
+# NAME=remote
+rdstest.ctqlircbvgnp.us-east-2.rds.amazonaws.com:5432:testdb:user:password
