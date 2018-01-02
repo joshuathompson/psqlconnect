@@ -1,5 +1,5 @@
 # psqlconnect
-> Interface to quickly build and run a psql command from your ~/.pgpass file  
+> Interface to quickly run a psql command from your ~/.pgpass file  
 
 [![asciicast](https://asciinema.org/a/UDHxTcmiRSmOozpAsoL5jimIn.png)](https://asciinema.org/a/UDHxTcmiRSmOozpAsoL5jimIn)
 
