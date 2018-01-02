@@ -120,7 +120,7 @@ func keybindings(g *gocui.Gui) error {
 		connections, err = pgpass.LoadConnectionsFromPgpass()
 
 		if err != nil {
-			log.Fatal(err)
+			return err
 		}
 
 		if len(filter) > 0 {
@@ -129,7 +129,10 @@ func keybindings(g *gocui.Gui) error {
 			filteredConnections = connections
 		}
 
-		return nil
+		selectedIndex = 0
+		err = v.SetCursor(0, 0)
+
+		return err
 	})
 
 	err = g.SetKeybinding("filter", gocui.KeyEnter, gocui.ModNone, func(g *gocui.Gui, v *gocui.View) error {
@@ -149,11 +152,12 @@ func keybindings(g *gocui.Gui) error {
 
 		if len(filter) > 0 {
 			filteredConnections = pgpass.GetFilteredConnections(connections, filter)
-			selectedIndex = 0
-			err = cv.SetCursor(0, 0)
 		} else {
 			filteredConnections = connections
 		}
+
+		selectedIndex = 0
+		err = cv.SetCursor(0, 0)
 
 		return err
 	})
