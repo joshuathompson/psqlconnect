@@ -1,7 +1,7 @@
 # psqlconnect
 > Interface to quickly run a psql command from your ~/.pgpass file  
 
-[![asciicast](https://asciinema.org/a/UDHxTcmiRSmOozpAsoL5jimIn.png)](https://asciinema.org/a/UDHxTcmiRSmOozpAsoL5jimIn)
+[![asciicast](https://asciinema.org/a/lFHrfLxc1g8H57hWJniD2xhkn.png)](https://asciinema.org/a/lFHrfLxc1g8H57hWJniD2xhkn)
 
 ## Install
 Fetch the latest release for your platform [from the following page](https://github.com/joshuathompson/psqlconnect/releases).

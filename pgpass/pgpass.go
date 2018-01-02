@@ -151,6 +151,8 @@ func ConnectToDatabase(connection *Connection) {
 		cmdString = fmt.Sprintf("%s -U %s", cmdString, connection.Username)
 	}
 
+	cmdString = fmt.Sprintf("%s -w", cmdString)
+
 	fmt.Printf("Running command %s\n", cmdString)
 
 	cmd := exec.Command("psql", args...)
